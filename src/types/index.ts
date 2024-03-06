@@ -25,3 +25,9 @@ export interface Geometry {
   coordinates: number[];
   type: string;
 }
+
+export interface ViewSettings {
+  latitude: number;
+  longitude: number;
+  zoom: number;
+}

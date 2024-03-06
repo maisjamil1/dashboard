@@ -1,10 +1,10 @@
 import * as React from "react";
 import { useState } from "react";
-import { Feature } from "@/types";
+import { Feature, ViewSettings } from "@/types";
 import { checkCanFly } from "@/helpers";
 interface Props {
   drones: Feature[];
-  setViewState: (val: any) => void;
+  setViewState: (val: ViewSettings) => void;
 }
 
 const ControlPanel: React.FC<Props> = ({ drones, setViewState }) => {
@@ -33,8 +33,6 @@ const ControlPanel: React.FC<Props> = ({ drones, setViewState }) => {
                 latitude: drone.geometry.coordinates[1],
                 longitude: drone.geometry.coordinates[0],
                 zoom: 15,
-                bearing: 0,
-                pitch: 0,
               });
             }}
             className={`py-2 px-6  ${selectedIndex == index ? "bg-gray-800" : ""}`}
