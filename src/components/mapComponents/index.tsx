@@ -10,7 +10,7 @@ import Map, {
 import { socketService } from "@/services/socket";
 import ControlPanel from "@/components/mapComponents/ControlPanel.tsx";
 import DrownIcon from "@/assets/icons/DrownIcon.tsx";
-import { Feature, FlightsRespons } from "@/types";
+import { Feature, FlightsRespons, ViewSettings } from "@/types";
 import { checkCanFly } from "@/helpers";
 import { INITIAL_VIEW_SETTINGS } from "@/constants";
 
@@ -18,7 +18,9 @@ const TOKEN = import.meta.env.VITE_MAPBOX_TOKEN;
 export default function MapContainer() {
   const [popupInfo, setPopupInfo] = useState<Feature | null>(null);
   const [drones, setDrones] = useState<Feature[]>([]);
-  const [viewState, setViewState] = useState(INITIAL_VIEW_SETTINGS);
+  const [viewState, setViewState] = useState<ViewSettings>(
+    INITIAL_VIEW_SETTINGS,
+  );
 
   useEffect(() => {
     socketService.connect();
