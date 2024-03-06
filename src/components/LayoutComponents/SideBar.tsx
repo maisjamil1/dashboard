@@ -8,7 +8,7 @@ export default function Sidebar() {
   return (
     <aside className="hidden md:flex flex-col pt-15 w-32 h-screen box-border">
       <nav>
-        <ul>
+        <ul className="text-center">
           <li className="p-2">
             <a className="text-gray-400 text-sm">
               <div className="block m-2 flex justify-center">
