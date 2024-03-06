@@ -1,4 +1,3 @@
-import "./App.css";
 import Sidebar from "@/components/LayoutComponents/SideBar.tsx";
 import MapContainer from "@/components/mapComponents";
 import Header from "@/components/LayoutComponents/Header.tsx";
@@ -10,16 +9,7 @@ function App() {
     <>
       <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
         <Header />
-
-        <div
-          className="docPage__5DB"
-          style={{
-            boxSizing: "border-box",
-            display: "flex",
-            width: "100%",
-            flex: "1 0 0%",
-          }}
-        >
+        <div className="flex w-full flex-1">
           <Sidebar />
           <Container>
             <MapContainer />

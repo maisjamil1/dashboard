@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useState } from "react";
 import { Feature } from "@/types";
+import { checkCanFly } from "@/helpers";
 interface Props {
   drones: Feature[];
   setViewState: (val: any) => void;
@@ -51,7 +52,7 @@ const ControlPanel: React.FC<Props> = ({ drones, setViewState }) => {
                 <div className="flex justify-between items-center">
                   <div>{drone.properties.registration}</div>
                   <div
-                    className={`items-center w-3 h-3  rounded-full ${drone.properties.registration.startsWith("SD-B") ? "bg-[#00FF00]" : "bg-[#d00]"}`}
+                    className={`items-center w-3 h-3  rounded-full ${checkCanFly(drone.properties.registration) ? "bg-[#00FF00]" : "bg-[#d00]"}`}
                   />
                 </div>
               </div>

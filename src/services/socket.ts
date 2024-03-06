@@ -1,7 +1,8 @@
-import { io } from "socket.io-client";
+import { io, Socket } from "socket.io-client";
+import { FlightsRespons } from "@/types";
 
 class SocketService {
-  socket: any;
+  socket: Socket;
 
   constructor() {
     this.socket = io(import.meta.env.VITE_SOCKET_URL);
@@ -14,7 +15,7 @@ class SocketService {
   }
 
   listenForMessages(callback: (data: any) => void) {
-    this.socket.on("message", (data: any) => {
+    this.socket.on("message", (data: FlightsRespons) => {
       callback(data);
     });
   }
