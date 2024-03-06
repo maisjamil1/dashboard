@@ -27,9 +27,9 @@ export default function MapContainer() {
     socketService.listenForMessages((data: FlightsRespons) => {
       setDrones((prv) => [...prv, ...data.features]);
     });
-    return () => {
-      socketService.disconnect();
-    };
+    // return () => {
+    //   socketService.disconnect();
+    // };
   }, []);
 
   return (

@@ -1,20 +1,20 @@
 import Sidebar from "@/components/LayoutComponents/SideBar.tsx";
-import MapContainer from "@/components/mapComponents";
 import Header from "@/components/LayoutComponents/Header.tsx";
 import { ThemeProvider } from "@/components/ui/theme-provider.tsx";
-import Container from "@/components/ui/container.tsx";
+import { BrowserRouter } from "react-router-dom";
+import Pages from "@/pages";
 
 function App() {
   return (
     <>
       <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-        <Header />
-        <div className="flex w-full flex-1">
-          <Sidebar />
-          <Container>
-            <MapContainer />
-          </Container>
-        </div>
+        <BrowserRouter>
+          <Header />
+          <div className="flex w-full flex-1">
+            <Sidebar />
+            <Pages />
+          </div>
+        </BrowserRouter>
       </ThemeProvider>
     </>
   );

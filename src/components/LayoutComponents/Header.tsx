@@ -1,5 +1,4 @@
-// import { useTheme } from "../theme-provider";
-// import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Button } from "../ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Menu from "@/assets/icons/menu";
@@ -26,22 +25,15 @@ const Header: FC = () => {
               </SheetTrigger>
               <SheetContent side="left" className="w-[300px] sm:w-[400px]">
                 <nav className="flex flex-col gap-4">
-                  <a className="block px-2 py-1 text-lg" href={"/dashboard"}>
+                  <NavLink
+                    className="block px-2 py-1 text-lg"
+                    to={"/dashboard"}
+                  >
                     Dashboard
-                  </a>
-                  <a className="block px-2 py-1 text-lg" href={"/"}>
+                  </NavLink>
+                  <NavLink className="block px-2 py-1 text-lg" to={"/"}>
                     Map
-                  </a>
-
-                  {/*{ROUTES.map((route) => (*/}
-                  {/*    <NavLink*/}
-                  {/*        key={route.label}*/}
-                  {/*        to={route.href}*/}
-                  {/*        className="block px-2 py-1 text-lg"*/}
-                  {/*    >*/}
-                  {/*        {route.label}*/}
-                  {/*    </NavLink>*/}
-                  {/*))}*/}
+                  </NavLink>
                 </nav>
               </SheetContent>
             </Sheet>
